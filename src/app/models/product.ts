@@ -2,7 +2,7 @@ export class Product {
 
     $key: number;
     name: String;
-    Category:String;
+    category:String;
     location:String;
     price:number;
 }
