@@ -2,38 +2,32 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
-
+import { AppComponent } from './app.component';
 
 // Firebase
 import { AngularFireDatabaseModule } from 'angularfire2/database';
 import { AngularFireModule } from 'angularfire2';
-import { environment } from '../environments/environment';
-
-//Components
+// tslint:disable-next-line:import-spacing
+import { environment } from  '../environments/environment';
+// components
+import { ProductsComponent } from './components/products/products.component';
 import { ProductListComponent } from './components/products/product-list/product-list.component';
 import { ProductComponent } from './components/products/product/product.component';
-import { AppComponent } from './app.component';
-import { VistaPreviaComponent } from './components/vista-previa/vista-previa.component';
-import { VistaComponent } from './components/vista/vista.component';
-import { AgregarComponent } from './components/agregar/agregar.component';
-
-//services
-import { ProductService } from './services/product.service'
+// services
+import { ProductService } from './services/product.service';
 
 @NgModule({
   declarations: [
     AppComponent,
-    VistaPreviaComponent,
-    VistaComponent,
-    AgregarComponent,
+    ProductsComponent,
     ProductListComponent,
     ProductComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
+    AngularFireDatabaseModule,
     AngularFireModule.initializeApp(environment.firebase),
-    AngularFireDatabaseModule
+    AppRoutingModule
   ],
   providers: [
     ProductService
@@ -41,3 +35,4 @@ import { ProductService } from './services/product.service'
   bootstrap: [AppComponent]
 })
 export class AppModule { }
+
