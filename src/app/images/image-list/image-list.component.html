@@ -4,13 +4,13 @@
     <div class="imagebox" *ngIf="i==0">
             <a routerLink="/image/upload">
             <img src="/assets/img/camera.jpg" class="img-fluid">
-            <span class="imagebox-desc">intert new img</span>
+            <span class="imagebox-desc">Insertar Nuevo Producto</span>
             </a>
     </div>
     <div class="imagebox" *ngIf="i!==0">
         <img [src]="imageList[3*i-1].imageUrl" class="img-fluid">
         <span class="imagebox-desc">
-            {{imageList[3*i-1].caption}}
+                {{imageList[3*i-1].caption}}
         </span>
     </div>
 </td>
