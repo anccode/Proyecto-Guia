@@ -11,13 +11,15 @@ import { ImagesComponent } from './images/images.component';
 import { ImageComponent } from './images/image/image.component';
 import { ImageListComponent } from './images/image-list/image-list.component';
 import { environment } from '../environments/environment';
+import { DescriptionComponent } from './description/description.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     ImagesComponent,
     ImageComponent,
-    ImageListComponent
+    ImageListComponent,
+    DescriptionComponent
   ],
   imports: [
     BrowserModule,
