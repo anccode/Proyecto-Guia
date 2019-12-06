@@ -14,21 +14,23 @@
         </span>
     </div>
 </td>
-    <td *ngIf="imageList[3*i]" >
-    <div class="imagebox" >
-            <img [src]="imageList[3*i].imageUrl" class="img-fluid">
-            <span class="imagebox-desc">
-                {{imageList[3*i].caption}}
-            </span>
-        </div>
-    </td>
-    <td>
-        <div class="imagebox" *ngIf="imageList[3*i+1]">
-                <img [src]="imageList[3*i+1].imageUrl" class="img-fluid">
-                <span class="imagebox-desc">
-                    {{imageList[3*i+1].caption}}
-                </span>
-            </div>
-</td>
+    <a routerLink="/image/component">
+            <td *ngIf="imageList[3*i]" >
+                    <div class="imagebox" >
+                            <img [src]="imageList[3*i].imageUrl" class="img-fluid">
+                            <span class="imagebox-desc">
+                                {{imageList[3*i].caption}}
+                            </span>
+                        </div>
+                    </td>
+                    <td>
+                        <div class="imagebox" *ngIf="imageList[3*i+1]">
+                                <img [src]="imageList[3*i+1].imageUrl" class="img-fluid">
+                                <span class="imagebox-desc">
+                                    {{imageList[3*i+1].caption}}
+                                </span>
+                            </div>
+                </td>
+    </a>
 </tr>
 </table>
