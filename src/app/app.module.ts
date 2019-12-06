@@ -1,44 +1,33 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire';
+import { AngularFireStorageModule } from '@angular/fire/storage';
+import { AngularFireDatabaseModule } from '@angular/fire/database';
+import { ReactiveFormsModule } from '@angular/forms';
 
+import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
-
-// firebase
-import { AngularFireModule } from 'angularfire2';
-import { AngularFireDatabaseModule } from 'angularfire2/database';
+import { ImagesComponent } from './images/images.component';
+import { ImageComponent } from './images/image/image.component';
+import { ImageListComponent } from './images/image-list/image-list.component';
 import { environment } from '../environments/environment';
-
-// components
-import { ProductsComponent } from './components/products/products.component';
-import { ProductComponent } from './components/products/product/product.component';
-import { ProductListComponent } from './components/products/product-list/product-list.component';
-
-// service
-import { ProductService } from './services/product.service';
-
-// Toastr
-import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
-import { ToastrModule } from 'ngx-toastr';
 
 @NgModule({
   declarations: [
     AppComponent,
-    ProductsComponent,
-    ProductComponent,
-    ProductListComponent
+    ImagesComponent,
+    ImageComponent,
+    ImageListComponent
   ],
   imports: [
     BrowserModule,
-    AngularFireModule.initializeApp(environment.firebase),
+    AppRoutingModule,
+    AngularFireModule.initializeApp(environment.firebaseConfig),
+    AngularFireStorageModule,
     AngularFireDatabaseModule,
-    FormsModule,
-    ToastrModule.forRoot(),
-    BrowserAnimationsModule
+    ReactiveFormsModule
   ],
-  providers: [
-    ProductService
-  ],
+  providers: [],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
